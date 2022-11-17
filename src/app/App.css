@@ -1,0 +1,29 @@
+.App-header {
+  height: 12vh;
+  justify-content: center;
+  background-color: #282c34;
+  font-size: 1.5rem;
+  color: white;
+}
+.body {
+  display: grid;
+  justify-content: left;
+  grid-template: 1fr / fit-content 1fr;
+}
+aside {
+  height: 88vh;
+  border-right: 1px black solid;
+  width: fit-content;
+  overflow-y: hidden;
+  background-color: rgb(202, 196, 182);
+  grid-area: 1 / 1 / 2 / 2;
+}
+#main {
+  box-sizing: border-box;
+  height: 88vh;
+  width: 100%;
+  background-color: lightslategray;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  grid-area: 1 / 2 / 2 / 3
+}

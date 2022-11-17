@@ -1,0 +1,24 @@
+.subRedditInfo {
+    border: 1px black solid;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    max-width: 250px;
+    height: auto;
+}
+
+h2.subRedditHeader {
+    padding: 5px 2rem;
+    margin: 0;
+}
+.subRedditSubCount {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.subRedditDescription {
+    text-align: center;
+    padding: 0;
+}

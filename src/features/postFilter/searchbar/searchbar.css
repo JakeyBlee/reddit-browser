@@ -1,0 +1,37 @@
+.searchForm {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    overflow: hidden;
+    background-color: white;
+    border: solid black 2px;
+    border-radius: 9999px;
+    padding-left: 1%;
+    margin-top: 1%;
+    transition: all 0.5s ease-in-out;
+}
+.searchForm:hover {
+    cursor: pointer;
+    filter: invert(100);
+    transition: all 0.5s ease-in-out;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.searchButton {
+    height: 80%;
+    border: none;
+    margin-right: 5px;
+    padding: 0;
+}
+.searchButton img {
+    height: 100%;
+}
+.searchButton:hover {
+    cursor: pointer;
+}

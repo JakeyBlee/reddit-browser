@@ -1,0 +1,78 @@
+.subRedditSearchForm {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    overflow: hidden;
+    background-color: white;
+    border: solid black 2px;
+    border-radius: 9999px;
+    padding-left: 1%;
+    margin-top: 5%;
+    transition: all 0.5s ease-in-out;
+}
+.subRedditSearchForm:hover {
+    cursor: pointer;
+    filter: invert(100);
+    transition: all 0.5s ease-in-out;
+}
+
+.searchSubReddits {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 150px;
+    padding-left: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.searchIcon {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    background-image: url('../../../media/search\ icon.png');
+    background-position: center;
+    background-size: contain;
+    transition: all 0.5s ease-in-out;
+}
+.searchIcon:hover {
+    filter: invert(100);
+}
+.subRedditSearchForm:hover .searchIcon {
+    background-image: url('../../../media/remove\ icon.png');
+    transition: all 0.5s ease-in-out;
+}
+
+#removeIcon {
+    height: 60%;
+    display: none;
+}
+#removeIcon .clear {
+    display: block;
+}
+
+.listContainer {
+    box-sizing: border-box;
+    width: fit-content;
+    padding-inline-start: 0;
+}
+.searchResult {
+    background-color: white;
+    width: 150px;
+    padding: 5px;
+    border: 1px black solid;
+    border-top: none;
+    list-style: none;
+    font-size: 0.8rem;
+    transition: filter 0.5s ease-in-out;
+}
+.searchResult:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.searchResult:hover {
+    cursor: pointer;
+    filter: invert(100);
+    font-weight: bolder;
+    transition: filter 0.5s ease-in-out;
+}
