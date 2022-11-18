@@ -1,0 +1,26 @@
+.postList, .postPage{
+    width: calc(100vw - 292px);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-inline-start: 5%;
+}
+.listHeader {
+    margin: 0.5rem;
+    font-weight: 700;
+    font-size: 20px;
+}
+.buttons {
+    display: flex;
+    margin: 0.5rem;
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width:750px){
+    .postList, .postPage{
+        width: calc(100vw);
+    }
+    .listHeader {
+        font-size: 18px;
+    }
+}

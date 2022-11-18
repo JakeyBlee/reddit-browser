@@ -1,6 +1,6 @@
 import { Header } from "../components/header/Header";
-import { PostList } from "../components/postList/PostList";
-import { SubReddits } from "../features/subRedditFilter/subReddits/SubReddits"
+import { SubReddits } from "../components/subRedditsList/SubRedditsList"
+import { Outlet } from "react-router-dom";
 import './App.css';
 
 export const App = () => {
@@ -14,7 +14,7 @@ export const App = () => {
           <SubReddits />
         </aside>
         <main id='main'>
-          <PostList />
+          <Outlet />
         </main>
       </div>
     </div>

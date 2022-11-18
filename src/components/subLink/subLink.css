@@ -11,8 +11,13 @@
     margin: 0.5rem;
     transition: all 0.3s ease-in-out;
 }
-.subLink .active {
+.subLink.active {
     filter: invert(100);
+    transition: all 0.3s ease-in-out;
+}
+.active img.subRedditIcon {
+    filter: invert(100);
+    transition: all 0.3s ease-in-out;
 }
 .subLink:hover {
     cursor: pointer;

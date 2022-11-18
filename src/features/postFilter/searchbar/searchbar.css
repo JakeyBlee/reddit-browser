@@ -7,8 +7,8 @@
     background-color: white;
     border: solid black 2px;
     border-radius: 9999px;
-    padding-left: 1%;
-    margin-top: 1%;
+    padding-left: 10px;
+    margin-top: 10px;
     transition: all 0.5s ease-in-out;
 }
 .searchForm:hover {

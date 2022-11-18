@@ -6,7 +6,7 @@ import { LoadingAnim } from "../loadingAnim/LoadingAnim";
 import { useEffect } from "react";
 import { Post } from "../post/Post";
 import { searchTerm } from "../../features/postFilter/searchbar/Searchbar";
-import './PostList.css'
+import './resultsSection.css'
 
 export const PostList = () => {
   const dispatch = useDispatch();
@@ -24,15 +24,11 @@ export const PostList = () => {
   useEffect(() => {
     dispatch(fetchPostsByFilter([filter, subReddit, topFilter]));
   }, [filter, subReddit, topFilter]);
-    const mainWindow = document.getElementById('main');
-    if(mainWindow){
-      mainWindow.scrollTop = 0;
-    }
   
   if(posts.length){
     return (
       <ul className="postList">
-        <h2>{header}</h2>
+        <p className="listHeader">{header}</p>
         <div className='buttons'>
           <FilterButton type='Hot'/>
           <FilterButton type='New'/>

@@ -1,18 +1,35 @@
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { fetchPostData } from '../../features/postPage/postPageSlice';
-import './Post.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPostPage } from '../../features/postPage/postPageSlice';
+import { Poll } from '../poll/Poll';
+import './mainPost.css';
 
-export const Post = (props) => {
-    const data = props.data;  
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+export const MainPost = () => {
+    const data = useSelector(selectPostPage).postData;
+
+    let id;
+    if(data.name){
+        id = data.name;
+    };
+    let text;
+    if(data.selftext){
+        text = data.selftext;
+    };
+    let awards;
+    if(data.all_awardings){
+        awards = data.all_awardings.map(award => (
+        <div className='award'>
+            <img className='awardIcon' src={award.icon_url}></img>
+            <p className='awardCount'>{award.count}</p>
+        </div>
+        ))
+    };
+
     let content;
-    let thumbnail;
     if(data.post_hint === 'image'){
         content = (
             <div className='imagePost'>
-                <img src={data.url} ></img>
+                <img src={data.url}></img>
             </div>
         );
     } else if(data.post_hint === 'video'){
@@ -33,23 +50,33 @@ export const Post = (props) => {
                 <video preload="auto" autoplay="autoplay" loop="loop" src={data.preview.reddit_video_preview.fallback_url} type="video/mp4" width={data.preview.reddit_video_preview.width} height={data.preview.reddit_video_preview.height} controls>Video not supported.</video>
             </div>
         );
-    } else if(data.url.endsWith('.gifv')){
+    } else if(data.url?.endsWith('.gifv')){
         const source = data.url.replace('.gifv', '.mp4')
         content = (
             <div className='videoPost'>
                 <video preload="auto" autoplay="autoplay" loop="loop" src={source} type="video/mp4" controls>Video not supported.</video>
             </div>
         );
-    } else if(data.thumbnail.startsWith('http')){
-        thumbnail = <img className='thumbnail' src={data.thumbnail}></img>;
-    }
-    if(data.selftext){
+    } else if(data.thumbnail?.startsWith('http')){
         content = (
-            <div className='textPost'>
-                <div className='selfText'>{data.selftext}</div>
-                <div className='fadeFilter'><p>Show More</p></div>
+            <div className='videoPost'>
+                <a href={data.url}>{data.url}</a>
+                <img src={data.thumbnail}></img>
             </div>
         );
+    } else if(data.tournament_data){
+        content = (
+            <div className='pollPost'>
+                {data.tournament_data.predictions.map(poll => (
+                <Poll key={poll.id} data={poll} class='reply'/> ))}
+            </div>
+        );
+    } else if(data.url && !data.url.startsWith('https://www.reddit.com')){
+        content = (
+        <div className='linkPost'>
+            <a href={data.url}>{data.url}</a>
+        </div>
+        )
     };
 
     let postAgeEpoch = (new Date())-(new Date(data.created*1000));
@@ -67,20 +94,8 @@ export const Post = (props) => {
         postAge = 'just now.'
     }
 
-    const awards = data.all_awardings.map(award => (
-        <div className='award'>
-            <img className='awardIcon' src={award.icon_url}></img>
-            <p className='awardCount'>{award.count}</p>
-        </div>
-    ));
-
-    const clickHandler = async () => {
-        dispatch(fetchPostData(data.permalink));
-        navigate(`/${data.author_fullname}`);
-    };
-
     return (
-        <li className='post' onClick={clickHandler}>
+        <li className='mainPost'>
             <div className='postInfo'>
                 <div className='rating'>
                     <img src={require('../../media/rating\ icon.png')} />
@@ -97,11 +112,11 @@ export const Post = (props) => {
             </div>
             <div className='postContent'>
                <h3>{data.title}</h3>
-                {thumbnail}
             </div>
+            <p className='textContent'>{text}</p>
             {content}
             <div className='postFooter'>
-                <p className='comments'>{data.num_comments} Comments</p>
+                <p className='mainComments'>{data.num_comments} Comments</p>
             </div>
         </li>
     )
