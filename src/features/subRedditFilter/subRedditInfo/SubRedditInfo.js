@@ -4,7 +4,6 @@ import './subRedditInfo.css';
 
 export const SubRedditInfo = () => {
     const activeSubReddit = useSelector(selectSubRedditFilter).activeSubReddit;
-    const InfoIsLoading = useSelector(selectSubRedditFilter).InfoIsLoading;
     const activeSubRedditInfo = useSelector(selectSubRedditFilter).activeSubRedditInfo.data;
 
     let header;

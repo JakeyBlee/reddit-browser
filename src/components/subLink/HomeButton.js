@@ -9,7 +9,7 @@ export const HomeButton = (props) => {
     const navigate = useNavigate();
     const activeSubReddit = useSelector(selectSubRedditFilter).activeSubReddit;
     const dispatch = useDispatch();
-    const image = <img className='subRedditIcon' src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png'/>;
+    const image = <img alt='icon' className='subRedditIcon' src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png'/>;
     let style = 'homeButton'
     if(data.display_name_prefixed === activeSubReddit){
         style = 'homeButton active'

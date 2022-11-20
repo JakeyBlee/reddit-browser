@@ -12,7 +12,7 @@ export const Post = (props) => {
     if(data.post_hint === 'image'){
         content = (
             <div className='imagePost'>
-                <img src={data.url} ></img>
+                <img alt='post main content' src={data.url} ></img>
             </div>
         );
     } else if(data.post_hint === 'video'){
@@ -41,7 +41,7 @@ export const Post = (props) => {
             </div>
         );
     } else if(data.thumbnail.startsWith('http')){
-        thumbnail = <img className='thumbnail' src={data.thumbnail}></img>;
+        thumbnail = <img alt='post thumbnail' className='thumbnail' src={data.thumbnail}></img>;
     }
     if(data.selftext){
         content = (
@@ -69,7 +69,7 @@ export const Post = (props) => {
 
     const awards = data.all_awardings.map(award => (
         <div className='award'>
-            <img className='awardIcon' src={award.icon_url}></img>
+            <img alt='award' className='awardIcon' src={award.icon_url}></img>
             <p className='awardCount'>{award.count}</p>
         </div>
     ));
@@ -83,7 +83,7 @@ export const Post = (props) => {
         <li className='post' onClick={clickHandler}>
             <div className='postInfo'>
                 <div className='rating'>
-                    <img src={require('../../media/rating\ icon.png')} />
+                    <img alt='rating' src={require('../../media/rating icon.png')} />
                     {data.ups}
                 </div>
                 <div className='subInfo'>

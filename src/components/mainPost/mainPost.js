@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectPostPage } from '../../features/postPage/postPageSlice';
 import { Poll } from '../poll/Poll';
 import './mainPost.css';
@@ -7,10 +6,10 @@ import './mainPost.css';
 export const MainPost = () => {
     const data = useSelector(selectPostPage).postData;
 
-    let id;
-    if(data.name){
-        id = data.name;
-    };
+    // let id;
+    // if(data.name){
+    //     id = data.name;
+    // };
     let text;
     if(data.selftext){
         text = data.selftext;
@@ -19,7 +18,7 @@ export const MainPost = () => {
     if(data.all_awardings){
         awards = data.all_awardings.map(award => (
         <div className='award'>
-            <img className='awardIcon' src={award.icon_url}></img>
+            <img alt='award icon' className='awardIcon' src={award.icon_url}></img>
             <p className='awardCount'>{award.count}</p>
         </div>
         ))
@@ -29,7 +28,7 @@ export const MainPost = () => {
     if(data.post_hint === 'image'){
         content = (
             <div className='imagePost'>
-                <img src={data.url}></img>
+                <img alt='main post content' src={data.url}></img>
             </div>
         );
     } else if(data.post_hint === 'video'){
@@ -61,7 +60,7 @@ export const MainPost = () => {
         content = (
             <div className='videoPost'>
                 <a href={data.url}>{data.url}</a>
-                <img src={data.thumbnail}></img>
+                <img alt='post thumbnail' src={data.thumbnail}></img>
             </div>
         );
     } else if(data.tournament_data){
@@ -98,7 +97,7 @@ export const MainPost = () => {
         <li className='mainPost'>
             <div className='postInfo'>
                 <div className='rating'>
-                    <img src={require('../../media/rating\ icon.png')} />
+                    <img alt='rating' src={require('../../media/rating icon.png')} />
                     {data.ups}
                 </div>
                 <div className='subInfo'>

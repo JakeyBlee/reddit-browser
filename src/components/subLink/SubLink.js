@@ -9,9 +9,9 @@ export const SubLink = (props) => {
     const navigate = useNavigate();
     const activeSubReddit = useSelector(selectSubRedditFilter).activeSubReddit;
     const dispatch = useDispatch();
-    let image = <img className='subRedditIcon' src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png'/>;
+    let image = <img alt='icon' className='subRedditIcon' src='https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png'/>;
     if(data.thumbnail){
-        image = <img className='subRedditIcon' src={data.thumbnail}/>
+        image = <img alt='icon' className='subRedditIcon' src={data.thumbnail}/>
     }
     let style = 'subLink'
     if(data.name === activeSubReddit){
@@ -36,7 +36,7 @@ export const SubLink = (props) => {
         <li className={style} onClick={handleClick}>
             {image}
             <h3>{data.name}</h3>
-            <img className='removeIcon' src={require('../../media/remove\ icon.png')} onClick={handleRemove} />
+            <img alt='remove button' className='removeIcon' src={require('../../media/remove icon.png')} onClick={handleRemove} />
         </li>
     )
 }

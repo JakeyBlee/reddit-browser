@@ -37,7 +37,7 @@ export const FilterButton = (props) => {
     return (
         <>
         <div className={style} onClick={handleClick}>
-            <img src={require(`../../../media/${props.type}\ icon.png`)}/>
+            <img alt='subreddit icon' src={require(`../../../media/${props.type} icon.png`)}/>
             <p>{props.type}</p>
         </div>
         {filter}

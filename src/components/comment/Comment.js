@@ -42,7 +42,7 @@ export const Comment = (props) => {
             <div className='commentInfo'>
                 <div className='commentRating'>
                     {comment.ups}
-                    <img src={require('../../media/rating\ icon.png')} />
+                    <img alt='rating icon' src={require('../../media/rating icon.png')} />
                 </div>
                 <ul className='authorInfo'>
                     <li className='author'>Posted by u/{comment.author}</li>

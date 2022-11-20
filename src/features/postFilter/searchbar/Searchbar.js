@@ -35,7 +35,7 @@ export const Searchbar = () => {
         <form className='searchForm' onSubmit={handleSubmit}>
             <input type='text' placeholder='Search posts' className='searchInput' value={termToSearch} onChange={handleChange}></input>
             <button className='searchButton'>
-                <img src={require(`../../../media/search\ icon.png`)}/>
+                <img alt='search button' src={require(`../../../media/search icon.png`)}/>
             </button>
         </form>
     );
