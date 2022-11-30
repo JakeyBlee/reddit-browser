@@ -8,17 +8,19 @@ The projects main purpose is to provide a simple to use and condensed browser fo
 
 ## Features
 
-This App allows users to search the Reddit database and through the JSON API pull posts that match their specific search requests. I displays the content of those posts, along with their upvotes and comments. Due to the API I am using, it does not allow for write operations.
+This App allows users to search the Reddit database and through the JSON API pull posts that match their specific search requests. It displays the content of those posts, along with their upvotes and comments. Due to the API I am using, it does not allow for write operations.
+
+There are two different formats, controlled through media queries and react-responsive. The desktop app allows for saving of subreddits to a list, which can be tailored to each user. Clicking on these subreddit icons will filter the feed to be specific to these. The mobile format is more streamlined, and displays less of these details.
 
 ## How to Use
 
-This App will be hosted on a remote site, and therefore should not need any additional steps to deploy. Typing a term into the searchbar will return relevant items via the API for viewing.
+This App will be hosted on a remote site, and therefore should not need any additional steps to deploy. Typing a term into the post searchbar will return relevant items via the API for viewing. Specific subreddits can also be filtered through the use of the subreddit searchbar. Subreddits can be further filtered by new, hot and top posts.
 
 ## Technololgies
 
 This project uses HTML, CSS and JavaScript.
 The App primarily utilises the React library and therefore the majority of the HTML is in the form of JSX. This allows for more efficient rendering and faster load times.
-States are handled through Redux and stored globally, to allow convinient access to individual Components. 
+States are handled through React-Redux and stored globally, to allow convinient access to individual Components. Responsive design was achieved through Redux-Responsive, alongside CSS media queries.
 
 ## Collaboraters
 

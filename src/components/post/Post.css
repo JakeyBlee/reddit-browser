@@ -3,7 +3,7 @@
     height: fit-content;
     width: 70%;
     max-width: 1000px;
-    min-width: 300px;
+    min-width: 400px;
     overflow: hidden;
     display: block;
     border-radius: 0.3rem;
@@ -200,6 +200,27 @@ h2.subRedditName {
 }
 
 @media only screen and (max-width:750px){
+    .post {
+        margin: 10px 0;
+        width: 100%;
+        min-width: 300px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    .post:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .postInfo {
+        background-color: rgb(202, 196, 182);
+        border-bottom: 1px black solid;
+        border-radius: 0;
+        display: grid;
+        grid-template: repeat(2, fit-content) / 20%, 80%;
+        justify-content: start;
+        padding: 8px 0;
+    }
     h2.subRedditName {
         font-size: 15px;
         margin: 0;

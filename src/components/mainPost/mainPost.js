@@ -34,26 +34,26 @@ export const MainPost = () => {
     } else if(data.post_hint === 'video'){
         content = (
             <div className='videoPost'>
-                <video preload="auto" autoplay="autoplay" loop="loop" src={data.secure_media.reddit_video.fallback_url} width={data.secure_media.reddit_video.width} height={data.secure_media.reddit_video.height} type="video/mp4" controls>Video not supported.</video>
+                <video preload="auto" autoPlay="autoplay" loop="loop" src={data.secure_media.reddit_video.fallback_url} width={data.secure_media.reddit_video.width} height={data.secure_media.reddit_video.height} type="video/mp4" controls>Video not supported.</video>
             </div>
         );
     } else if(data.post_hint === 'hosted:video'){
         content = (
             <div className='videoPost'>
-                <video preload="auto" autoplay="autoplay" loop="loop" src={data.secure_media.reddit_video.fallback_url} width={data.secure_media.reddit_video.width} height={data.secure_media.reddit_video.height} type="video/mp4" controls>Video not supported.</video>
+                <video preload="auto" autoPlay="autoplay" loop="loop" src={data.secure_media.reddit_video.fallback_url} width={data.secure_media.reddit_video.width} height={data.secure_media.reddit_video.height} type="video/mp4" controls>Video not supported.</video>
             </div>
         );
     } else if(data.post_hint === 'rich:video' && data.preview.video){
         content = (
             <div className='videoPost'>
-                <video preload="auto" autoplay="autoplay" loop="loop" src={data.preview.reddit_video_preview.fallback_url} type="video/mp4" width={data.preview.reddit_video_preview.width} height={data.preview.reddit_video_preview.height} controls>Video not supported.</video>
+                <video preload="auto" autoPlay="autoplay" loop="loop" src={data.preview.reddit_video_preview.fallback_url} type="video/mp4" width={data.preview.reddit_video_preview.width} height={data.preview.reddit_video_preview.height} controls>Video not supported.</video>
             </div>
         );
     } else if(data.url?.endsWith('.gifv')){
         const source = data.url.replace('.gifv', '.mp4')
         content = (
             <div className='videoPost'>
-                <video preload="auto" autoplay="autoplay" loop="loop" src={source} type="video/mp4" controls>Video not supported.</video>
+                <video preload="auto" autoPlay="autoplay" loop="loop" src={source} type="video/mp4" controls>Video not supported.</video>
             </div>
         );
     } else if(data.thumbnail?.startsWith('http')){
@@ -115,7 +115,7 @@ export const MainPost = () => {
             <p className='textContent'>{text}</p>
             {content}
             <div className='postFooter'>
-                <p className='mainComments'>{data.num_comments} Comments</p>
+                {/* <p className='mainComments'>{data.num_comments} Comments</p> */}
             </div>
         </li>
     )

@@ -1,7 +1,7 @@
 .mainComment {
     height: fit-content;
     width: 70%;
-    margin: 5px -30px;
+    margin-top: 15px;
     max-width: 1000px;
     min-width: 300px;
     overflow: hidden;
@@ -36,20 +36,41 @@
     height: 15px;
     margin-left: 5px;
 }
-
-.inherited {
-    margin-left: 30px;
-}
 .reply {
     background-color: white;
     border-radius: 0.3rem;
     border: 1px solid black;
-    margin: 5px 0px;
-    width: 80%;
+    margin-left: 30px;
+    width: calc(70% - 30px);
 }
 
 @media only screen and (max-width:750px){
     .reply {
+        margin-left: 20px;
         min-width: none;
+    }
+    .mainComment {
+        width: 100vw;
+        margin: 5px 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    .commentInfo {
+        border-bottom: 1px black solid;
+        background-color: rgb(246, 240, 228);
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+        display: grid;
+        grid-template: repeat(2, fit-content) / 20%, 80%;
+        justify-content: start;
+        padding: 8px 0;
+    }
+    .reply {
+        background-color: white;
+        border-radius: 0.3rem;
+        border: 1px solid black;
+        margin-left: 30px;
+        width: calc(100vw - 30px)
     }
 }

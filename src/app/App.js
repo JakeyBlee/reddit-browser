@@ -20,3 +20,9 @@ export const App = () => {
     </div>
   );
 }
+
+// Next patch improvements:
+
+// Selftext markdown conversion
+// Video audio / autoplay when within viewport
+// Select from saved subreddits on mobile

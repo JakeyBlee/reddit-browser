@@ -37,7 +37,7 @@ export const Comment = (props) => {
     };
 
     return (
-        <div className='inherited'>
+        <>
         <div className={props.class}>
             <div className='commentInfo'>
                 <div className='commentRating'>
@@ -54,8 +54,10 @@ export const Comment = (props) => {
                 {replies}
             </div>
         </div>
-        {comment.replies && !replyFilter ? comment.replies.data.children.filter(reply => reply.kind === 't1').map(reply => (
-        <Comment key={reply.data.id} data={reply.data} class='reply'/> )) : ''}
+        <div className='replies'>
+            {comment.replies && !replyFilter && comment.replies.data.children.filter(reply => reply.kind === 't1').map(reply => (
+            <Comment key={reply.data.id} data={reply.data} class='reply'/> ))}
         </div>
+        </>
     )
 }
